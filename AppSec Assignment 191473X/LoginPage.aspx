@@ -15,8 +15,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h3>Login</h3>
-            <br />
+            <h1>Login</h1>
             <br />
             <table style="width:100%;">
                 <tr>

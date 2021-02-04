@@ -61,7 +61,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Registration Form<br />
+            <h1>Registration Form</h1>
             <br />
             <table style="width:100%;">
                 <tr>
