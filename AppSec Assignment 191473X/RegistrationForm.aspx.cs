@@ -208,16 +208,22 @@ namespace AppSec_Assignment_191473X
         {
             int score = 0;
 
-            SqlConnection con = new SqlConnection(AppSecDBConnectionString);
-            string sqlStmt = "Select Email From Account Where Email='" + HttpUtility.HtmlEncode(tbEmail.Text) + "'";
-            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count != 0)
+            using (SqlConnection con = new SqlConnection(AppSecDBConnectionString))
             {
-                score++;
+                string sqlStmt = "Select Email From Account Where Email=" + "@Email";
+                SqlDataAdapter da = new SqlDataAdapter(sqlStmt, con);
+                SqlParameter pa = new SqlParameter("Email", tbEmail.Text);
+                da.SelectCommand.Parameters.Add(pa);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (ds.Tables[0].Rows.Count != 0)
+                {
+                    score++;
+                }
+                return score;
             }
-            return score;
+            //string sqlStmt = "Select Email From Account Where Email='" + HttpUtility.HtmlEncode(tbEmail.Text) + "'";
+
         }
    
     }
