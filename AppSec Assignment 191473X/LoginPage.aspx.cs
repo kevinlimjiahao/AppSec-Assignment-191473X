@@ -165,7 +165,7 @@ namespace AppSec_Assignment_191473X
                     {
                         string jsonResponse = readStream.ReadToEnd();
 
-                        lbl_gScore.Text = jsonResponse.ToString();
+                        //lbl_gScore.Text = jsonResponse.ToString();
 
                         JavaScriptSerializer js = new JavaScriptSerializer();
 

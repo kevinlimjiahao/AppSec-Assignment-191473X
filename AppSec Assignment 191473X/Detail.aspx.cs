@@ -16,10 +16,10 @@ namespace AppSec_Assignment_191473X
     public partial class Detail : System.Web.UI.Page
     {
         string AppSecDBConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AppSecDB"].ConnectionString;
-        string firstName = null;
-        string lastName = null;
+        //string firstName = null;
+        //string lastName = null;
         string email = null;
-        string dob = null;
+        //string dob = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Email"] != null && Session["AuthToken"] != null && Request.Cookies["AuthToken"] != null)
